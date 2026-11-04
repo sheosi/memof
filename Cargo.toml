@@ -1,0 +1,16 @@
+[package]
+name = "memof"
+version = "0.1.0"
+edition = "2024"
+license = "MIT OR Apache-2.0"
+
+[dependencies]
+anyhow = "1.0.104"
+bollard = "0.21.1"
+clap = { version = "4.6.6", features = ["derive"] }
+futures-util = "0.3.34"
+nix = { version = "0.31.3", features = ["process", "signal"] }
+serde = { version = "1.0.229", features = ["derive"] }
+sonic-rs = "0.5.10"
+sysinfo = "0.39.6"
+tokio = { version = "1.54.1", features = ["macros", "rt", "signal"] }
