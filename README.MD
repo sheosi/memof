@@ -11,6 +11,8 @@ A multi backend memory sampler designed to follow processes in benchmarks, retur
 cargo install memof
 ```
 
+## Usage
+
 *basic usage:* `memof start <container-name>`
 *example usage:* `memof start my-container`
 
@@ -18,6 +20,14 @@ Will keep monitoring the container until it exists or until it is asked to stop.
 
 ```shell
 memof stop
+```
+
+### Other backends 
+
+In order to make use of other backends just make use of the `--backend` flag. Example:
+
+```shell
+memof start --backend process my-process
 ```
 
 ## Features

@@ -40,7 +40,7 @@ enum Action {
     Start {
         name: String,
 
-        #[arg(value_enum, default_value_t = BackendArg::Docker)]
+        #[arg(long, short, value_enum, default_value_t = BackendArg::Docker)]
         backend: BackendArg,
     },
     Stop,
