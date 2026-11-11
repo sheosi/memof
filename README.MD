@@ -1,9 +1,9 @@
 # Memof
 
-A multi backend memory sampler designed to follow processes in benchmarks, returns a json with the data. Available backends:
+A multi-backend memory sampler designed to follow some target (processes, a docker container) and write a JSON with the data. Available backends:
 
 * **Docker**: will poll the docker runtime to get memory info about a certain container
-* **Process**: Keeps track of a process and all it's children
+* **Process**: Keeps track of a process and all its children
 
 ## Installation
 
@@ -13,12 +13,17 @@ cargo install memof
 
 ## Usage
 
-*basic usage:* `memof start <container-name>`
-*example usage:* `memof start my-container`
 
-Will keep monitoring the container until it exists or until it is asked to stop.
+*basic usage:* `memof start <container-name>`
+
+`memof start` spawns a background sampler and returns immediately; `memof stop` ends it and writes `memory.json`.
+
+
+### Example with script
 
 ```shell
+memof start mycontainer
+someBenchWork
 memof stop
 ```
 
